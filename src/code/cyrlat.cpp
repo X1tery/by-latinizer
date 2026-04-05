@@ -38,7 +38,7 @@ std::unordered_set<int32_t> CYRILLIC_CHAR_POOL{
     'Э', 'э',
     'Ю', 'ю',
     'Я', 'я',
-    '\'',
+    '\'', '’'
 };
 
 std::unordered_set<int32_t> HAL_HUKI {
@@ -56,14 +56,15 @@ std::unordered_set<int32_t> HAL_HUKI {
     'Ё', 'ё',
     'Ю', 'ю',
     'Ь', 'ь',
-    '\'',
+    '\'', '’',
 };
 
-std::unordered_set<int32_t> ZAC_HUKI {
+std::unordered_set<int32_t> NIEPIER_HUKI {
     'Р', 'р',
     'Ж', 'ж',
     'Ш', 'ш',
     'Ч', 'ч',
+    'К', 'к'
 };
 
 std::unordered_set<int32_t> MIAK_HUKI {
@@ -165,7 +166,7 @@ utf8str translateCyrLat(utf8str str) {
         case 'З':
             if (i < str.size() - 1 && (str[i + 1] == 'Ь' || str[i + 1] == 'ь'))
                 out.push_back('Ź');
-            else if (i < str.size() - 2 && !HAL_HUKI.contains(str[i + 1]) && !ZAC_HUKI.contains(str[i + 1]) && MIAK_HUKI.contains(str[i + 2]))
+            else if (i < str.size() - 2 && !HAL_HUKI.contains(str[i + 1]) && !NIEPIER_HUKI.contains(str[i + 1]) && MIAK_HUKI.contains(str[i + 2]))
                 out.push_back('Ź');
             else if (i < str.size() - 3 && (str[i + 1] == 'Д' || str[i + 1] == 'д') && (str[i + 2] == 'З' || str[i + 2] == 'з') && MIAK_HUKI.contains(str[i + 2]))
                 out.push_back('Ź');
@@ -175,7 +176,7 @@ utf8str translateCyrLat(utf8str str) {
         case 'з':
             if (i < str.size() - 1 && (str[i + 1] == 'Ь' || str[i + 1] == 'ь'))
                 out.push_back('ź');
-            else if (i < str.size() - 2 && !HAL_HUKI.contains(str[i + 1]) && !ZAC_HUKI.contains(str[i + 1]) && MIAK_HUKI.contains(str[i + 2]))
+            else if (i < str.size() - 2 && !HAL_HUKI.contains(str[i + 1]) && !NIEPIER_HUKI.contains(str[i + 1]) && MIAK_HUKI.contains(str[i + 2]))
                 out.push_back('ź');
             else if (i < str.size() - 3 && (str[i + 1] == 'Д' || str[i + 1] == 'д') && (str[i + 2] == 'З' || str[i + 2] == 'з') && MIAK_HUKI.contains(str[i + 2]))
                 out.push_back('ź');
@@ -227,7 +228,7 @@ utf8str translateCyrLat(utf8str str) {
         case 'Н':
             if (i < str.size() - 1 && (str[i + 1] == 'Ь' || str[i + 1] == 'ь'))
                 out.push_back('Ń');
-            else if (i < str.size() - 2 && !HAL_HUKI.contains(str[i + 1]) && !ZAC_HUKI.contains(str[i + 1]) && MIAK_HUKI.contains(str[i + 2]))
+            else if (i < str.size() - 2 && !HAL_HUKI.contains(str[i + 1]) && !NIEPIER_HUKI.contains(str[i + 1]) && MIAK_HUKI.contains(str[i + 2]))
                 out.push_back('Ń');
             else if (i < str.size() - 3 && (str[i + 1] == 'Д' || str[i + 1] == 'д') && (str[i + 2] == 'З' || str[i + 2] == 'з') && MIAK_HUKI.contains(str[i + 2]))
                 out.push_back('Ń');
@@ -237,7 +238,7 @@ utf8str translateCyrLat(utf8str str) {
         case 'н':
             if (i < str.size() - 1 && (str[i + 1] == 'Ь' || str[i + 1] == 'ь'))
                 out.push_back('ń');
-            else if (i < str.size() - 2 && !HAL_HUKI.contains(str[i + 1]) && !ZAC_HUKI.contains(str[i + 1]) && MIAK_HUKI.contains(str[i + 2]))
+            else if (i < str.size() - 2 && !HAL_HUKI.contains(str[i + 1]) && !NIEPIER_HUKI.contains(str[i + 1]) && MIAK_HUKI.contains(str[i + 2]))
                 out.push_back('ń');
             else if (i < str.size() - 3 && (str[i + 1] == 'Д' || str[i + 1] == 'д') && (str[i + 2] == 'З' || str[i + 2] == 'з') && MIAK_HUKI.contains(str[i + 2]))
                 out.push_back('ń');
@@ -265,7 +266,7 @@ utf8str translateCyrLat(utf8str str) {
         case 'С':
             if (i < str.size() - 1 && (str[i + 1] == 'Ь' || str[i + 1] == 'ь'))
                 out.push_back('Ś');
-            else if (i < str.size() - 2 && !HAL_HUKI.contains(str[i + 1]) && !ZAC_HUKI.contains(str[i + 1]) && MIAK_HUKI.contains(str[i + 2]))
+            else if (i < str.size() - 2 && !HAL_HUKI.contains(str[i + 1]) && !NIEPIER_HUKI.contains(str[i + 1]) && MIAK_HUKI.contains(str[i + 2]))
                 out.push_back('Ś');
             else if (i < str.size() - 3 && (str[i + 1] == 'Д' || str[i + 1] == 'д') && (str[i + 2] == 'З' || str[i + 2] == 'з') && MIAK_HUKI.contains(str[i + 2]))
                 out.push_back('Ś');
@@ -275,7 +276,7 @@ utf8str translateCyrLat(utf8str str) {
         case 'с':
             if (i < str.size() - 1 && (str[i + 1] == 'Ь' || str[i + 1] == 'ь'))
                 out.push_back('ś');
-            else if (i < str.size() - 2 && !HAL_HUKI.contains(str[i + 1]) && !ZAC_HUKI.contains(str[i + 1]) && MIAK_HUKI.contains(str[i + 2]))
+            else if (i < str.size() - 2 && !HAL_HUKI.contains(str[i + 1]) && !NIEPIER_HUKI.contains(str[i + 1]) && MIAK_HUKI.contains(str[i + 2]))
                 out.push_back('ś');
             else if (i < str.size() - 3 && (str[i + 1] == 'Д' || str[i + 1] == 'д') && (str[i + 2] == 'З' || str[i + 2] == 'з') && MIAK_HUKI.contains(str[i + 2]))
                 out.push_back('ś');
@@ -318,7 +319,7 @@ utf8str translateCyrLat(utf8str str) {
         case 'Ц':
             if (i < str.size() - 1 && (str[i + 1] == 'Ь' || str[i + 1] == 'ь'))
                 out.push_back('Ć');
-            else if (i < str.size() - 2 && !HAL_HUKI.contains(str[i + 1]) && !ZAC_HUKI.contains(str[i + 1]) && MIAK_HUKI.contains(str[i + 2]))
+            else if (i < str.size() - 2 && !HAL_HUKI.contains(str[i + 1]) && !NIEPIER_HUKI.contains(str[i + 1]) && MIAK_HUKI.contains(str[i + 2]))
                 out.push_back('Ć');
             else if (i < str.size() - 3 && (str[i + 1] == 'Д' || str[i + 1] == 'д') && (str[i + 2] == 'З' || str[i + 2] == 'з') && MIAK_HUKI.contains(str[i + 2]))
                 out.push_back('Ć');
@@ -328,7 +329,7 @@ utf8str translateCyrLat(utf8str str) {
         case 'ц':
             if (i < str.size() - 1 && (str[i + 1] == 'Ь' || str[i + 1] == 'ь'))
                 out.push_back('ć');
-            else if (i < str.size() - 2 && !HAL_HUKI.contains(str[i + 1]) && !ZAC_HUKI.contains(str[i + 1]) && MIAK_HUKI.contains(str[i + 2]))
+            else if (i < str.size() - 2 && !HAL_HUKI.contains(str[i + 1]) && !NIEPIER_HUKI.contains(str[i + 1]) && MIAK_HUKI.contains(str[i + 2]))
                 out.push_back('ć');
             else if (i < str.size() - 3 && (str[i + 1] == 'Д' || str[i + 1] == 'д') && (str[i + 2] == 'З' || str[i + 2] == 'з') && MIAK_HUKI.contains(str[i + 2]))
                 out.push_back('ć');
@@ -399,7 +400,7 @@ utf8str translateCyrLat(utf8str str) {
             else
                 out.append("ia");
             break;
-        case 'Ь': case 'ь': case '\'':
+        case 'Ь': case 'ь': case '\'': case '’':
             break;
         default:
             out.push_back(str[i]);
