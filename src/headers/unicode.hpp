@@ -17,6 +17,7 @@ class utf8str {
         void append(std::string str);
         void insert(size_t pos, uint32_t c);
         void insert(size_t pos, utf8str s);
+        void erase(size_t pos);
         std::vector<uint32_t> getarr();
         std::string getstr();
 };

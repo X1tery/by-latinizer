@@ -15,7 +15,6 @@ std::unordered_set<int32_t> CYRILLIC_CHAR_POOL{
     'Ж', 'ж',
     'З', 'з',
     'І', 'і',
-    'I', 'i',
     'Й', 'й',
     'К', 'к',
     'Л', 'л',
@@ -79,7 +78,7 @@ std::unordered_set<int32_t> MIAK_HUKI {
 
 utf8str translateCyrLat(utf8str str) {
     utf8str out{};
-    for (int i = 0; i < str.size(); i++) {
+    for (size_t i = 0; i < str.size(); i++) {
         switch (static_cast<int>(str[i])) {
         case 'А':
             out.push_back('A');

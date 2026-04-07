@@ -68,6 +68,10 @@ void utf8str::insert(size_t pos, utf8str s) {
 	data.insert_range(data.cbegin() + pos, s.getarr());
 }
 
+void utf8str::erase(size_t pos) {
+	data.erase(data.begin() + pos);
+}
+
 std::vector<uint32_t> utf8str::getarr() {
 	return data;
 }
