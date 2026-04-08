@@ -13,8 +13,10 @@ add_executable(bycyrlat)
 target_sources(bycyrlat
 PRIVATE
     src/maincyrlat.cpp
+    src/headers/input.hpp
     src/headers/unicode.hpp
     src/headers/cyrlat.hpp
+    src/code/input.cpp
     src/code/unicode.cpp
     src/code/cyrlat.cpp
 )
@@ -24,8 +26,10 @@ add_executable(bylatcyr)
 target_sources(bylatcyr
 PRIVATE
     src/mainlatcyr.cpp
+    src/headers/input.hpp
     src/headers/unicode.hpp
     src/headers/latcyr.hpp
+    src/code/input.cpp
     src/code/unicode.cpp
     src/code/latcyr.cpp
 )
